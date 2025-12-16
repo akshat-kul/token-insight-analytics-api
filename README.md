@@ -1,9 +1,9 @@
 # 🚀 Token Insight Analytics API
 - A FastAPI-based analytics service that delivers:
-- 📊 Crypto token insights using CoinGecko + Hugging Face LLMs
-- 💰 Hyperliquid wallet PnL analytics (realized, unrealized, fees, funding)
-- 🧪 Fully tested with pytest + asyncio
-- 🐳 Dockerized for painless local & CI usage
+- Crypto token insights using CoinGecko + Hugging Face LLMs
+- Hyperliquid wallet PnL analytics (realized, unrealized, fees, funding)
+- Fully tested with pytest + asyncio
+- Dockerized for painless local & CI usage
 - This project is intentionally stateless, lightweight, and designed for analytics-first workloads.
 
 ### ✨ Features
