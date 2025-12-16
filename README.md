@@ -52,8 +52,24 @@ token-insight-analytics-api/
 ```
 
 ### ⚙️ Setup & Installation
-- Clone the repo
+1. Clone the repo
 ```bash
 git clone https://github.com/<your-username>/token-insight-analytics-api.git
 cd token-insight-analytics-api
+```
+
+2. Environment Variables
+Create a .env file using the env.example file given
+
+3. Run with Docker (Recommended)
+```bash
+docker-compose up --build
+```
+- API will be available at:
+```bash
+http://localhost:8000
+```
+- Swagger docs:
+```bash
+http://localhost:8000/docs
 ```
