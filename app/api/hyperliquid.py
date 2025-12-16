@@ -1,44 +1,30 @@
-from fastapi import APIRouter, Path, Query
+from fastapi import APIRouter, Query
 from datetime import date
+
+from app.clients.hyperliquid_client import HyperLiquidClient
+from app.services.hyperliquid_service import HyperLiquidPnLService
 
 router = APIRouter()
 
+client = HyperLiquidClient()
+service = HyperLiquidPnLService(client)
+
 
 @router.get("/{wallet}/pnl")
-async def get_wallet_pnl(
-    wallet: str = Path(..., description="Wallet address"),
-    start: date = Query(..., description="Start date (YYYY-MM-DD)"),
-    end: date = Query(..., description="End date (YYYY-MM-DD)"),
+async def wallet_pnl(
+    wallet: str,
+    start: date = Query(...),
+    end: date = Query(...),
 ):
-    """
-    Fetch HyperLiquid wallet activity and calculate daily PnL.
-    """
+    result = await service.calculate_pnl(wallet, start, end)
 
-    # TEMP dummy response
     return {
         "wallet": wallet,
         "start": start,
         "end": end,
-        "daily": [
-            {
-                "date": str(start),
-                "realized_pnl_usd": 0.0,
-                "unrealized_pnl_usd": 0.0,
-                "fees_usd": 0.0,
-                "funding_usd": 0.0,
-                "net_pnl_usd": 0.0,
-                "equity_usd": 0.0,
-            }
-        ],
-        "summary": {
-            "total_realized_usd": 0.0,
-            "total_unrealized_usd": 0.0,
-            "total_fees_usd": 0.0,
-            "total_funding_usd": 0.0,
-            "net_pnl_usd": 0.0,
-        },
+        **result,
         "diagnostics": {
-            "data_source": "mock",
-            "notes": "Dummy response: logic not implemented yet",
+            "data_source": "hyperliquid_info_endpoint",
+            "notes": "Unrealized PnL is a snapshot from current open positions",
         },
     }
