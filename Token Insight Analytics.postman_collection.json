@@ -1,0 +1,80 @@
+{
+	"info": {
+		"_postman_id": "a90cd757-c809-4ebf-96fb-db8028add396",
+		"name": "Token Insight Analytics",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30817750",
+		"_collection_link": "https://zolnoi-noobs.postman.co/workspace/zolnoi-noobs-Workspace~bc80bd6e-181c-470f-8480-5a6ac49d9538/collection/30817750-a90cd757-c809-4ebf-96fb-db8028add396?action=share&source=collection_link&creator=30817750"
+	},
+	"item": [
+		{
+			"name": "Token Insight",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"vs_currency\": \"usd\",\r\n  \"history_days\": 30\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://0.0.0.0:8000/api/token/bitcoin/insight",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"token",
+						"bitcoin",
+						"insight"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HyperLiquid P&L report",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://0.0.0.0:8000/api/hyperliquid/0x8c967e73e7b15087c42a10d344cff4c96d877f1d/pnl?start=2025-11-25&end=2025-12-02",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"hyperliquid",
+						"0x8c967e73e7b15087c42a10d344cff4c96d877f1d",
+						"pnl"
+					],
+					"query": [
+						{
+							"key": "start",
+							"value": "2025-11-25"
+						},
+						{
+							"key": "end",
+							"value": "2025-12-02"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
