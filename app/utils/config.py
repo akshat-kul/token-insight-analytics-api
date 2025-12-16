@@ -11,11 +11,6 @@ class Settings(BaseSettings):
     DEBUG: bool = Field(default=False)
 
     # ------------------
-    # Database
-    # ------------------
-    DATABASE_URL: str
-
-    # ------------------
     # AI
     # ------------------
     AI_PROVIDER: str = Field(default="mock")
