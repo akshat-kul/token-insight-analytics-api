@@ -29,7 +29,7 @@ Built with FastAPI, PostgreSQL, and modern async Python — because blocking cod
 
 ### 📁 Project Structure
 token-insight-analytics-api/
-<bash>
+```text
 ├── app/
 │   ├── main.py
 │   ├── api/
@@ -49,4 +49,4 @@ token-insight-analytics-api/
 ├── requirements.txt
 ├── .env.example
 └── README.md
-</bash>
+```
