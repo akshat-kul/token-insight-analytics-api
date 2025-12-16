@@ -28,8 +28,8 @@ Built with FastAPI, PostgreSQL, and modern async Python — because blocking cod
 - API Client: Postman (optional bonus)
 
 ### 📁 Project Structure
-token-insight-analytics-api/
 ```text
+token-insight-analytics-api/
 ├── app/
 │   ├── main.py
 │   ├── api/
@@ -49,4 +49,11 @@ token-insight-analytics-api/
 ├── requirements.txt
 ├── .env.example
 └── README.md
+```
+
+### ⚙️ Setup & Installation
+- Clone the repo
+```bash
+git clone https://github.com/<your-username>/token-insight-analytics-api.git
+cd token-insight-analytics-api
 ```
